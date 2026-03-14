@@ -5,7 +5,11 @@ import streamlit.components.v1 as components
 import pandas as pd
 
 # Load model
-nlp = spacy.load("en_core_web_sm")
+@st.cache_resource
+def load_model():
+    return spacy.load("en_core_web_sm")
+
+nlp = load_model()
 
 # Page config
 st.set_page_config(page_title="Dependency Parser", page_icon="🧠", layout="wide")
