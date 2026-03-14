@@ -4,6 +4,7 @@ from spacy import displacy
 import streamlit.components.v1 as components
 import pandas as pd
 
+st.set_page_config(page_title="Dependency Parser", page_icon="🧠", layout="wide")
 # Load model
 @st.cache_resource
 def load_model():
@@ -12,7 +13,6 @@ def load_model():
 nlp = load_model()
 
 # Page config
-st.set_page_config(page_title="Dependency Parser", page_icon="🧠", layout="wide")
 
 # Custom CSS for smooth animation
 st.markdown("""
